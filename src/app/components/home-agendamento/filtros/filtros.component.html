@@ -1,0 +1,51 @@
+<div class="container">
+	<div class="row row-person">	
+		<div class="col-md-12">
+		    <form class="form-inline filter">
+        <div class="form-group form-group-style">
+          <label class="sr-only" for="filtro-tipo">Estado</label>
+          <select class="form-control" id="filtro-tipo">
+            <option value="">São Paulo</option>
+            <option value="">Rio de Janeiro</option>
+            <option value="">Belo Horizonte</option>
+          </select>
+        </div>
+        <div class="form-group form-group-style">
+          <label class="sr-only" for="filtro-conta">Filial</label>
+          <select class="form-control" id="filtro-conta">
+            <option value="">Company 1</option>
+            <option value="">Company 2</option>
+            <option value="">Santana</option>
+          </select>
+        </div>
+
+        
+        <div class="form-group form-group-style">
+          <label class="sr-only" for="filtro-data-inicial">Data inicial</label>
+          <input type="date" class="form-control" id="filtro-data-inicial">
+        </div>
+        <div class="form-group form-group-style">
+          <label class="sr-only" for="filtro-categoria">Horário</label>
+          <select class="form-control" id="filtro-categoria">
+            <option value="">Horário</option>
+            <option value="">08:00</option>
+            <option value="">09:00</option>
+            <option value="">10:00</option>
+            <option value="">11:00</option>
+            <option value="">12:00</option>
+            <option value="">13:00</option>
+            <option value="">14:00</option>
+            <option value="">15:00</option>
+            <option value="">16:00</option>
+            <option value="">17:00</option>
+            <option value="">18:00</option>
+          </select>
+        </div>
+        <div class="form-group form-group-style">
+          <button type="submit" class="btn btn-primary" [routerLink]="['rooms']">Filtrar</button>
+          <button type="reset" class="btn btn-default" >Limpar</button>
+        </div>
+      </form>
+		</div>
+	</div>
+</div>

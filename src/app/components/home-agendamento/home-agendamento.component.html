@@ -1,0 +1,97 @@
+<!-- filtros inicio-->
+<app-filtros></app-filtros>
+<div class="container">
+    <div class="row row-box">
+        <div class="col-sm-3 box-cards" *ngFor="let agenda of agendar">
+            <div class="card">
+                <img src="http://espacocerto.net.br/wp-content/uploads/2017/11/Reuni%C3%A3o-1.png" alt="Denim Jeans" style="width:100%">
+                
+                <table class="full_table_list">
+                    <tr>
+                        <th colspan="2" class="alinhamento"><h3>{{agenda.nome}}</h3></th>
+                    </tr>
+                    <tr>
+                        <td><strong class="alinha">Categoria:</strong></td>
+                        <td>{{agenda.categoria}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong class="alinha">Localidade:</strong></td>
+                        <td>{{agenda.localidade}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong class="alinha">Filial:</strong></td>
+                        <td>{{agenda.filial}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong class="alinha">Capacidade:</strong></td>
+                        <td>{{agenda.capacidade}}</td>
+                    </tr>
+                    <tr class="tamanho">
+                        <td class="alinhar" rowspan="2"><p><strong class="alinha">Equipamentos:</strong></p></td> 
+                        <td rowspan="2" class="alinhar"><p>{{agenda.equipamentos}}</p></td>
+                    </tr>
+                    {{agenda.id}}
+                    <tr>
+                        
+                    </tr>
+                </table>                                                              
+                <p><button [routerLink]="['/home-agendar', agenda.id]" (click)="open(content)" (click)="onSelect(agenda)">Reservar</button></p>
+                
+            
+            </div>
+        </div>
+        
+        <!-- Inicio-->
+        <ng-template #content let-modal>
+                <div class="modal-header">
+                    <h4 class="modal-title text-center" id="modal-basic-title">Terreo 3</h4>
+                    <button type="button" [routerLink]="['/home-agendar']" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <img src="http://espacocerto.net.br/wp-content/uploads/2017/11/Reuni%C3%A3o-1.png" alt="Denim Jeans"
+                                style="width:100%;height: 300px;">
+                            <label for="dateOfBirth"></label>
+                            <div class="input-group">
+                                <div class="input-group time-data">
+                                    <p class="time-data-element-data"><strong>Data:  </strong>10/10/2018</p>
+                                    <input class="time-data-element" id="hora-cons" type="time" name="hora-cons" value="13:30">
+                                    <p class="time-data-element-p">ás</p>
+                                    <input class="time-data-element" id="hora-cons" type="time" name="hora-cons" value="13:30">
+                                </div>
+                                <hr class="hr">
+                                <div class="input-group-append flex-list">
+                                    <p><strong>Categoria: </strong>{{ reserva.categoria}}</p>
+                                    <p><strong>Localidade: </strong>{{reserva.localidade}}</p>
+                                    <p><strong>Filial: </strong> {{reserva.filial}}</p>
+                                    <p><strong>Capacidade: </strong>{{reserva.capacidade}} pessoas</p>
+                                    <p><strong>Equipamentos: </strong>{{reserva.equipamentos}}</p>
+                                    <p><strong>Responsável: </strong>user</p>
+                                    <p><strong>Célula:  </strong>user</p>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" [routerLink]="['/home-agendar']" class="btn btn-outline-dark" (click)="modal.close('Save click')">Reservar</button>
+                    <button type="button" [routerLink]="['/home-agendar']" class="btn btn-outline-dark" (click)="modal.close('Save click')">Cancelar</button>
+              
+                </div>
+              </ng-template>
+              
+              <pre>{{closeResult}}</pre>
+            
+      
+
+        <!--btn add-->
+
+    </div>
+</div>
+
+<!-- filtros fim-->
+
+  

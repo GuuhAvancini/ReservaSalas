@@ -1,0 +1,42 @@
+{
+  "salas": [
+    {
+      "id": 1,
+      "nome": "Terreo 1",
+      "categoria": "Reunião",
+      "localidade": "São Paulo",
+      "filial": "Company 2",
+      "capacidade": 8,
+      "equipamentos": "Televisor"
+    },
+    {
+      "id": 2,
+      "nome": "Terreo 2",
+      "categoria": "Reunião",
+      "localidade": "São Paulo",
+      "filial": "Company 2",
+      "capacidade": 8,
+      "equipamentos": "Televisor"
+    },
+    {
+      "id": 3,
+      "nome": "Terreo 3",
+      "categoria": "Entrevista",
+      "localidade": "São Paulo",
+      "filial": "Company 2",
+      "capacidade": 3,
+      "equipamentos": "NULL"
+    },
+    {
+      "id": 1,
+      "nome": "Company 1",
+      "categoria": "Entrevista",
+      "localidade": "São Paulo",  
+      "filial": "company 1",
+      "capacidade": 3,
+      "equipamentos": "NULL"
+    }
+   
+   
+  ]
+}
