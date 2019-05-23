@@ -1,0 +1,221 @@
+<div class="app-content">
+  <div class="row">
+
+
+    <div class="col-lg-12">
+      <form class="form-inline filter" #f="ngForm" (ngSubmit)="filterRooms(f.value)">
+        <div class="form-group">
+          <label class="sr-only" for="filtro-tipo">Estado</label>
+          <select class="form-control" id="filtro-tipo" name="estado" ngModel (change)="onSelectState($event.target.value)">
+            <option id="0" value="0" selected>-- Selecione --</option>
+            <option *ngFor="let state of states" id="{{state.StateId}}" value="{{state.StateId}}">{{state.Name}}</option>
+          </select>
+        </div>
+        <div class="form-group form-group-style">
+          <label class="sr-only" for="filtro-conta">Filial</label>
+          <select class="form-control" id="filtro-conta" name="filial" ngModel>
+            <option id="0" value="0" selected>-- Selecione --</option>
+            <option *ngFor="let branch of branch" id="{{branch.BranchId}}" value="{{branch.BranchId}}">{{branch.Name}}</option>
+          </select>
+        </div>
+
+        <div class="form-group form-group-style">
+          <label class="sr-only" for="filtro-data-inicial">Data inicial</label>
+          <input type="date" value="" name="data" ngModel class="form-control tam" id="filtro-data-inicial" />
+        </div>
+        <div class="form-group form-group-style">
+          <label class="sr-only" for="filtro-categoria">Horário</label>
+          <input class="form-control margin" id="hora-cons" name="inicio" ngModel type="time" value="" />
+
+          <input class="form-control marginl" id="hora-cons" name="fim" ngModel type="time" value="" />
+        </div>
+        <div class="form-group form-group-style">
+          <button type="submit" class="btn btn-primary" [value]="complemento">Filtrar</button>
+          <button type="reset" class="btn btn-default">Limpar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3" *ngFor="let agendar of agendar | paginate: {itemsPerPage: 4, currentPage: pageActual}">
+      <div class="card">
+        <img [src]="agendar.RoomPicture"  alt="Denim Jeans" style="width:100%; height: 52%;" />
+        <table class="full_table_list">
+          <tr>
+            <th colspan="2" class="alinhamento">
+              <h3>{{ agendar.Name }}</h3>
+            </th>
+          </tr>
+          <tr>
+            <td><strong class="alinha">Categoria:</strong></td>
+            <td>{{ agendar.RoomType.Name }}</td>
+          </tr>
+          <tr>
+            <td><strong class="alinha">Localidade:</strong></td>
+            <td>{{ agendar.Branch.State.Name }}</td>
+          </tr>
+          <tr>
+            <td><strong class="alinha">Filial:</strong></td>
+            <td>{{ agendar.Branch.Name }}</td>
+          </tr>
+          <tr>
+            <td><strong class="alinha">Capacidade:</strong></td>
+            <td>{{ agendar.Capacity }}</td>
+          </tr>
+          <tr class="tamanho">
+            <td class="alinhar" rowspan="2">
+              <p><strong class="alinha">Equipamentos</strong></p>
+            </td>
+            <td rowspan="2" class="alinhar" >
+              <p  *ngFor="let agendar of agendar.Equipments">{{ agendar.Name}}</p>
+            </td>
+          </tr>
+          <tr></tr>
+        </table>
+        <p>
+          <button id="{{agendar.RoomId}}" [routerLink]="['/home-agendar', agendar.RoomId]" (click)="openModal(template,teste,agendar.IsAvailable)" (click)="onSelect(agendar)" [style.background-color]="agendar.IsAvailable == false ? 'red' : 'green'">
+            Reservar
+          </button>
+        </p>
+      </div>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-md-12 flex-pagination">
+      <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
+    </div>
+  </div>
+</div>
+
+
+<ng-template #template>
+  <div class="modal-header reserva-name">
+    <h4 class="modal-title" id="modal-basic-title">
+      Reservar Sala: {{ reserva.Name }}
+    </h4>
+    <button type="button" class="close" aria-label="Close" [routerLink]="['/home-agendar']" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true" class="buton-exit">&times;</span>
+    </button>
+  </div>
+  <form #a="ngForm" (ngSubmit)="ReservaSolicitada(a.value)">
+  <div class="modal-body">
+      <div class="form-group">
+        <img class="testeimg" src="http://espacocerto.net.br/wp-content/uploads/2017/11/Reuni%C3%A3o-1.png" alt="Denim Jeans" class="testqqw" />
+        <div class="input-group modal-flex">
+          <div class="input-group-append flex-list">
+            <table class="full_table_list table-margin-top" width="100%">
+              <tr height="40px">
+                <td><strong class="alinha">Data:</strong></td>
+                <td><input type="date" class="form-control tam" id="filtro-data-inicial" name="Data" ngModel/></td>
+              </tr>
+              <tr height="40px">
+                <td><strong class="alinha">Horário</strong></td>
+                <td>
+                  <input class="time-data-element" id="hora-cons" type="time" name="hora-cons" value="13:30" name="Start" ngModel />
+                  ás
+                  <input class="time-data-element" id="hora-cons" type="time" name="hora-cons" value="13:30" name="Finish" ngModel/>
+                </td>
+              </tr>
+              <tr height="40px">
+                <td><strong class="alinha">Categoria: </strong></td>
+                <td>{{ reserva.RoomType.Name }}</td>
+              </tr>
+              <tr height="40px">
+                <td><strong class="alinha">Localidade: </strong></td>
+                <td>{{ reserva.Branch.State.Name }}</td>
+              </tr>
+              <tr height="40px">
+                <td><strong class="alinha">Filial:</strong></td>
+                <td>{{ reserva.Branch.Name }}</td>
+              </tr>
+              <tr height="40px">
+                <td><strong class="alinha">Capacidade:</strong></td>
+                <td>{{ reserva.Capacity }}</td>
+              </tr>
+              <tr height="40px">
+                <td><strong class="alinha">Equipamentos:</strong></td>
+                <td><p *ngFor="let reserva of reserva.Equipments">{{ reserva.Name }}</p></td>
+              </tr>
+              <!-- sobre o cafe -->
+
+              <tr height="40px">
+                <td><strong class="alinha">Deseja Café na reunião?</strong></td>
+                <td>
+                  <input type="radio" name="Sim" value="Bike"> Sim,
+                  para quantas pessoas?<input class="number-coffe" type="number"><br>
+                  <input type="radio" name="Sim" value="Bike">Não<br>
+
+                </td>
+              </tr>
+              <tr height="40px">
+                <td><strong class="alinha">Reunião com</strong></td>
+                <td>
+                  <input type="radio" name="Sim1" value="Bike"> Cliente
+                  <input type="radio" name="Sim1" value="Bike"> Fornecedor
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+  </div>
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-outline-dark">
+      Reservar
+    </button>
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">
+      Cancelar
+    </button>
+  </div>
+</form>
+</ng-template>
+
+
+<!-- segundo modal -->
+<ng-template #teste>
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header">
+        <p class="heading lead">Já existe uma reserva para o horário informado</p>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="white-text">×</span>
+        </button>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+        <img src="../../../assets/imagens/icon-rooms-feedback.png" alt="">
+        <div class="text-center">
+          <table class="full_table_list table-margin-top" width="100%">
+              <tr height="40px">
+                  <td><strong class="alinha">Nome:</strong></td>
+                  <td>Thaís Almeida</td>
+                </tr>
+                <tr height="40px">
+                    <td><strong class="alinha">Data da reserva </strong></td>
+                    <td>14/12/2018</td>
+                  </tr>
+                  <tr height="40px">
+                      <td><strong class="alinha">Horário </strong></td>
+                      <td>19:00 ás 21:00</td>
+                    </tr>
+                    <tr height="40px">
+                        <td><strong class="alinha">Email </strong></td>
+                        <td>talmeida2@stefanini.com</td>
+                      </tr>
+          </table>
+        </div>
+      </div>
+
+      <!--Footer-->
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-primary color-menu">Negociar Sala</button>
+
+      </div>
+    </div>
+    <!--/.Content-->
+</ng-template>

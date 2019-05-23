@@ -1,0 +1,61 @@
+<div class="app-content">
+  <div class="app-title">
+    <div>
+      <h1><i class="fa fa-th-list"></i> Reservas efetuadas na sua filial</h1>
+    </div>
+    <ul class="app-breadcrumb breadcrumb side">
+      <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+      <li class="breadcrumb-item">Admin Local</li>
+      <li class="breadcrumb-item active"><a href="#">Controle de reservas</a></li>
+    </ul>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="tile">
+        <div class="tile-body">
+          <div id="sampleTable_filter" class="dataTables_filter">
+          </div>
+          <table class="table table-hover table-bordered" id="sampleTable">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Andar</th>
+                <th>Tipo de Sala</th>
+                <th>Reservado por:</th>
+                <th>data</th>
+                <th>Horário de Inicio</th>
+                <th>Horário de Termino</th>
+                <th>Cancelar Reserva</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let reserva of reservas">
+                <td>{{reserva.Room.Name}}</td>
+                <td>3</td>
+                <td>{{reserva.Room.RoomType.Name}}</td>
+                <td>Leandro Dantas</td>
+                <td> {{reserva.Start | date: 'dd/MM/yyyy' }} </td>
+                <td> {{reserva.Start | date:'shortTime' }} </td>
+                <td> {{reserva.Finish | date:'shortTime' }} </td>
+                <td><button class="btn primary-btn" (click)="deleteAgendamento(reserva.ScheduleId)" [routerLink]="['./editRoom']">Cancelar</button></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="col-sm-12 col-md-12">
+            <div class="dataTables_paginate paging_simple_numbers position-ui-room" id="sampleTable_paginate">
+              <ul class="pagination">
+                <li class="paginate_button page-item previous disabled" id="sampleTable_previous">
+                  <a href="#" aria-controls="sampleTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
+                </li>
+                <li class="paginate_button page-item active">
+                  <a href="#" aria-controls="sampleTable" data-dt-idx="1" tabindex="0" class="page-link">1</a>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

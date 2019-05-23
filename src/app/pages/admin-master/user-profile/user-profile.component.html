@@ -1,0 +1,88 @@
+<div class="app-content">
+  <div class="row user">
+    <div class="col-md-12">
+      <div class="profile">
+        <div class="info"><img class="user-img" src="">
+          <h4>{{ userDell.Name }}</h4>
+          <p>Desenvolvedor</p>
+        </div>
+        <div class="info-user">
+          <div class="row">
+            <div class="col-md-12 textpos">
+              <div class="tile">
+               <!--<h3 class="tile-title">Card Title</h3>
+                <div class="tile-body">
+                    <table class="table table-hover table-bordered"  id="sampleTable">
+                        <thead>
+                          <tr>
+                            <th>Nome:</th>
+                            <th>Cargo</th>
+                            <th>Filial</th>
+                            <th>Email</th>
+                            <th>Tipo de Assinatura</th>
+                            <th>Gestor</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>{{ userDell.Name }}</td>
+                            <td>Desenvolvedor</td>
+                            <td>{{ userDell.Branch.Name}}</td>
+                            <td>{{ userDell.Email }}</td>
+                            <td>{{ userDell.Signature.Name }}</td>
+                            <td>Frederico Fagundes</td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+              </div>
+--><div class="tile">
+    <table class="table">
+      <thead>
+        <tr>
+            <th>Nome:</th>
+
+            <th>Filial</th>
+            <th>Email</th>
+            <th>Tipo de Assinatura</th>
+            <th>Gestor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <td>{{ userDell.Name }}</td>
+
+            <td>{{ userDell.Branch.Name}}</td>
+            <td>{{ userDell.Email }}</td>
+            <td>{{ userDell.Signature.Name }}</td>
+            <td>Frederico Fagundes</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="tile">
+        <ul class="nav flex-column nav-tabs user-tabs">
+          <li class="nav-item"><a class="nav-link active" href="#user-timeline" data-toggle="tab">Mudar Posição</a></li>
+          <li class="nav-item"><a class="nav-link" href="" (click)="delUser()" data-toggle="tab">Excluir Usúario</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-9">
+      <div class="tab-pane fade" id="user-settings">
+          <div class="col-lg-4">
+              <div class="bs-component">
+                  <div class="alert alert-dismissible alert-success">
+                      <button class="close" type="button" data-dismiss="alert">×</button><strong>Usuario</strong> Excluido com sucesso <a class="alert-link" href="#">Agora ele passsara a ser um usuario comun</a>.
+                    </div>
+              </div>
+            </div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,93 @@
+<div class="app sidebar-mini rtl">
+  <!-- Navbar-->
+  <header class="app-header"><a class="app-header__logo">
+      <img src="../../../assets/imagens/log-home.svg" alt="">
+    </a>
+    <!-- Sidebar toggle button--><a class="app-sidebar__toggle" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+    <!-- Navbar Right Menu-->
+    <ul class="app-nav">
+
+      <!--Notification Menu-->
+
+      <!-- User Menu-->
+      <ul class="nav navbar-top-links navbar-right flex-menu-topbar">
+        <li class="style-intens">
+          <a class="a-intens" href="">Política de Reservas</a>
+        </li>
+
+        <li class="style-intens">
+          <button class="btn-stf" data-toggle="dropdown">Digital Room</button>
+        </li>
+
+        <!-- <li class="style-intens">
+          <a class="a-intens" href="">leandro</a>
+        </li>-->
+        <li class="style-intens">
+          <a (click)="logout()" [routerLink]="['./login']">
+            <i class="fa fa-sign-out" ></i> Log out
+          </a>
+        </li>
+      </ul>
+    </ul>
+  </header>
+  <!-- Sidebar menu-->
+  <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+  <aside class="app-sidebar">
+    <div class="app-sidebar__user">
+      <div>
+        <p class="app-sidebar__user-name"> {{userName}}</p>
+        <p class="app-sidebar__user-designation">Facilities - Admin Master</p>
+      </div>
+    </div>
+
+    <ul class="app-menu">
+      <li>
+        <a class="app-menu__item" [routerLink]="['./home']"><i class="app-menu__icon fa fa-home color-icon"></i><span class="app-menu__label">Home</span></a>
+      </li>
+
+
+      <li><a class="app-menu__item" [routerLink]="['./reservas']">
+          <i class="app-menu__icon fa fa-calendar color-icon"></i><span class="app-menu__label">Minhas Reservas</span></a>
+      </li>
+
+      <li class="treeview" id="admLocal"><a class="app-menu__item" data-toggle="treeview"><i class="app-menu__icon fa fa-laptop"></i><span
+            class="app-menu__label">Admin-Local</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+        <ul class="treeview-menu">
+          <li><a class="app-menu__item " [routerLink]="['./reservasatuais']"><i class="app-menu__icon fa fa-list-alt color-icon"></i><span
+                class="app-menu__label">Reservas Atuais</span></a></li>
+
+          <li><a class="app-menu__item " [routerLink]="['./controlrooms']"><i class="app-menu__icon fa fa-stack-exchange color-icon"></i><span
+                class="app-menu__label">Controle de Salas</span></a></li>
+
+          <li><a class="app-menu__item " [routerLink]="['./admin-loca/sala']"><i class="app-menu__icon fa fa-plus-circle color-icon"></i><span
+                class="app-menu__label">Adicionar Sala</span></a></li>
+
+        </ul>
+      </li>
+
+
+      <!--retirados os active dos menus abaixos-->
+
+
+      <li class="treeview" id="admTotal"><a class="app-menu__item" href="#" data-toggle="treeview" [routerLink]="['./AdminMaster']"><i
+            class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Admin-Master</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+        <ul class="treeview-menu">
+          <li><a class="app-menu__item " [routerLink]="['./AdminMaster']"><i class="app-menu__icon fa fa-user color-icon"></i><span
+                class="app-menu__label">Controle de Usuários</span></a></li>
+          <li><a class="app-menu__item " [routerLink]="['./ControleFilialComponent']"><i class="app-menu__icon fa fa-building-o color-icon"></i><span
+                class="app-menu__label">Controle de Filias</span></a></li>
+          <li><a class="app-menu__item " [routerLink]="['./AdicionarUserComponent']"><i class="app-menu__icon fa fa-user-plus color-icon"></i><span
+                class="app-menu__label">Adicionar Usuário</span></a></li>
+
+        </ul>
+      </li>
+
+
+
+
+    </ul>
+  </aside>
+  <!-- <footer>
+        <p>Stefanini todos os direitos reservados</p>
+  </footer> -->
+</div>

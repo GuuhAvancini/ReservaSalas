@@ -1,0 +1,295 @@
+.row-person{
+  margin-top: 10px;
+}
+
+.form-control{
+margin-left: 0px;
+margin-right: 0px;
+}
+.filter{
+display: flex;
+justify-content: center;
+
+}
+
+.filter .form-group{
+padding: 10px;
+display: flex;
+}
+
+.filter .form-group button{
+margin-left: 10px;
+
+}
+
+.tam{
+width: 175px;
+}
+.marginl{
+margin-left: 5px;
+}
+.margin{
+margin-right: 5px;
+}
+
+@media (max-width: 768px){
+
+.filter{
+   justify-content: center;
+   flex-direction: column;
+
+}
+
+}
+
+/* CSS do card */
+.box-cards{
+width: fit-content;
+}
+
+.box-btn{
+width: fit-content;
+top: 130px;
+left: 700px;
+}
+
+.card {
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+max-width: 210px;
+margin: auto;
+text-align: center;
+font-family: arial;
+height: 100%;
+}
+
+.price {
+color: grey;
+font-size: 22px;
+}
+
+.card button {
+border: none;
+outline: 0;
+padding: 12px;
+color: white;
+background-color: green;
+text-align: center;
+cursor: pointer;
+width: 100%;
+font-size: 18px;
+}
+
+.card button:hover {
+opacity: 0.7;
+}
+
+/* btn add */
+.edition-btn{
+background-color: black; /* Green */
+border: none;
+color: white;
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 60px;
+border-radius: 50%;
+
+border: 3px solid #eee;
+}
+
+/* paginação */
+.paginacao{
+display: flex;
+justify-content: center;
+height: 40px;
+margin-top:10px;
+}
+
+/* modal */
+.modal-flex{
+display:flex;
+flex-direction: column;
+}
+
+.posi2{
+width: 100%;
+display: flex;
+justify-content: center;
+}
+/* filtros */
+.posi{
+margin-top: 20px;
+width: 100%;
+display: flex;
+justify-content: center;
+}
+
+
+/* intens do modal */
+
+.time-data{
+display: flex;
+justify-items: center;
+align-items: center;
+}
+
+.time-data-element{
+margin-left: 24px;
+font-size: 20px;
+}
+.time-data-element-data{
+margin-left: 24px;
+font-size: 20px;
+margin-top: 10px;
+}
+
+.time-data-element-p{
+margin-left: 15px;
+margin-top: 10px;
+}
+.hr{
+background-color: black;
+width: 100%;
+
+}
+.flex-list{
+display:flex;
+flex-direction: column;
+}
+
+/*css global tabela*/
+.full_table_list{
+width: 100%;
+border-collapse: collapse;
+}
+
+/*colocando bordas nas linhas*/
+.full_table_list td{
+padding-top: 0%;
+width:52%
+}
+
+/*Definido cor das linhas pares*/
+.full_table_list tr:nth-child(even) {
+background: #CDCDC1;
+text-align: left;
+}
+
+/*Definindo cor das Linhas impáres*/
+.full_table_list tr:nth-child(odd) {
+background:white;
+text-align: left;
+}
+td.alinhar{
+vertical-align: top;
+}
+strong.alinha{
+padding-left: 5% ;
+vertical-align: top;
+}
+th.alinhamento{
+text-align:center;
+margin-bottom: 0%;
+background-color: black;
+}
+h3{
+width:100%;
+color: white;
+}
+.reserva-name{
+background-color: #104E8B;
+color:white;
+}
+.buton-exit{
+color:white;
+}
+
+.table-margin-top{
+margin-top: 20px;
+}
+
+.container{
+position:relative;
+float:right;
+width: 85%;
+height: 100%;
+margin-top: 0px
+
+}
+
+.row{
+margin-top:20px;
+margin-right: 5%;
+padding-bottom: 20px;
+}
+
+.row-box{
+border: 1px solid #cad400;
+height: 90%;
+}
+
+.col-sm-3{
+border: #000;
+position:relative;
+padding-left: 0px;
+padding-right: 0px;
+margin-top: 20px;
+}
+tr.tamanho{
+height: 65px;
+}
+
+.time-data-element{
+width: 80px;
+font-size: 15px;
+margin-left: 5px;
+margin-right: 5px;
+border-radius: 10px;
+border-style: hidden;
+}
+
+
+/* paginação */
+.position-ui-room{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.number-coffe{
+  width: 31px;
+  margin-left: 9px;
+  margin-top: 8px;
+  margin-bottom: 3px;
+}
+
+
+.testqqw{
+  height: 200px;
+}
+
+.flex-pagination{
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+
+
+// modal 2
+
+.color-menu{
+  color: #fff;
+}
+
+.posi-title-second-modal{
+  text-align: center;
+  font-weight: bold;
+  font-size: 17px;
+  margin: 20px 35px;
+}
+
+.testeimg{
+  height: 0px;
+}

@@ -1,0 +1,38 @@
+<div class="app-content">
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="tile">
+      <h3 class="tile-title">Minhas Reservas</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Sala</th>
+            <th>Data</th>
+            <th>Inicio</th>
+            <th>Fim</th>
+            <th>Local</th>
+            <th>Check in</th>
+            <th>Cancelar</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let reserva of minhasreservas">
+            <td> {{reserva. ScheduleId}} </td>
+            <td> {{reserva.Room.Name}} </td>
+            <td> {{reserva.Start | date: 'dd/MM/yyyy' }} </td>
+            <td> {{reserva.Start | date:'shortTime' }} </td>
+            <td> {{reserva.Finish | date:'shortTime' }} </td>
+            <td> {{ reserva.Room.Branch.Name }} </td>
+            <td>Check in</td>
+            <td><button class="btn primary-btn" (click)="deleteAgendamento(reserva.ScheduleId)">Cancelar</button></td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>

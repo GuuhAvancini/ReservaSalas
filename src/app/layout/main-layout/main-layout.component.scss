@@ -1,0 +1,142 @@
+.app-sidebar, .app-nav, .app-header__logo, .app-header{
+  background-color: #F4F4F4;
+}
+
+.app-sidebar__user-name, .app-sidebar__user-designation{
+   color: black;
+}
+
+.app-menu__label{
+   color: black;
+}
+
+.app-menu__item.active, .app-menu__item:hover, .app-menu__item:focus{
+  background-color: #E9E9E9;
+  border-left-color: #682E85;
+  color: black;
+}
+
+.fa-laptop, .fa-dashboard{
+  color: black;
+
+}
+
+/* menus */
+.treeview-menu{
+  background-color: #fff;
+}
+.treeview.is-expanded [data-toggle='treeview']{
+  background: #fff;
+}
+
+/* personalização do menu em cima */
+.topbar{
+  background-color: #f4f4f4;
+}
+
+.flex-menu{
+  display: flex;
+  justify-content: space-between;
+}
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.flex-menu-topbar{
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.flex-menu-topbar ul {
+    list-style: none;
+}
+
+.style-intens{
+  border-left: 1px solid #d8d8d8;
+  height: 57px;
+  display: flex;
+  align-items: center;
+  padding: 23px;
+}
+.style-intens-last{
+  height: 78px;
+  display: flex;
+
+}
+.a-intens{
+    padding: 20px;
+    margin-left: -30px;
+    color: black;
+}
+
+/* btn personalizado */
+.btn-stf{
+  font-family: Rubik;
+
+  font-size: 18px;
+
+  font-weight: 500;
+
+  font-style: normal;
+
+  font-stretch: normal;
+
+  line-height: 1.43;
+
+  letter-spacing: normal;
+
+  color: #323232;
+
+  width: 179px;
+
+  height: 47px;
+
+  border-radius: 2px;
+
+  background-color: #fcfcfc;
+
+  border: solid 1px #ccc;
+}
+
+/* icon hamburguer */
+.responsiv-btn{
+    display: none;
+}
+  /* responsive */
+
+  @media (max-width: 800px) {
+      .icons{
+          display: flex;
+      }
+      .flex-menu-topbar{
+          display: none;
+      }
+      .responsiv-btn{
+          display: inline-block;
+      }
+
+}
+
+
+
+// footer
+
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #f5f5f5;
+}
+
+
+// icons
+.color-icon{
+  color: black;
+}

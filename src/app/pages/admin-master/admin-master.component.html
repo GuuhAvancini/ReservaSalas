@@ -1,0 +1,68 @@
+<div class="app-content">
+  <div class="app-title">
+    <div>
+      <h1><i class="fa fa-th-list"></i> Controle de Usúarios</h1>
+    </div>
+    <ul class="app-breadcrumb breadcrumb side">
+      <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+      <li class="breadcrumb-item">Admin-master</li>
+      <li class="breadcrumb-item active"><a href="#">Controle de Usúarios</a></li>
+    </ul>
+  </div>
+  <div class="row">
+          <div class="col-lg-12">
+              <form class="form-inline filter" >
+                  <div class="form-group">
+                      <label class="sr-only" for="filtro-tipo">Estado</label>
+                      <select class="form-control" id="filtro-tipo">
+                          <option value="1" id="value">São Paulo</option>
+                          <option value="2" id="value">Rio de Janeiro</option>
+                          <option value="3" id="value">Belo Horizonte</option>
+                      </select>
+                  </div>
+                  <div class="form-group form-group-style">
+                      <label class="sr-only" for="filtro-conta">Filial</label>
+                      <select class="form-control" id="filtro-conta">
+                          <option value="0" id="value">Company 1</option>
+                          <option value="1" id="value">Company 2</option>
+                          <option value="2" id="value">Santana</option>
+                      </select>
+                  </div>
+                  <div class="form-group form-group-style">
+                      <button type="submit" class="btn btn-primary">Filtrar</button>
+                      <button type="reset" class="btn btn-default">Limpar</button>
+                  </div>
+              </form>
+      </div>
+    <div class="col-md-12">
+      <div class="tile">
+        <div class="tile-body">
+          <table class="table table-hover table-bordered" id="sampleTable">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Cargo</th>
+                <th>Filial</th>
+                <th>Email</th>
+                <th>Tipo de Assinatura</th>
+                <th>Gestor</th>
+                <th>Editar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let userInformation of userInformation">
+                <td>{{ userInformation.Name }}</td>
+                <td>Desenvolvedor</td>
+                <td>{{ userInformation.Branch.Name }}</td>
+                <td>{{ userInformation.Email }}</td>
+                <td>{{ userInformation.Signature.Name }}</td>
+                <td>Frederico Fagundes</td>
+                <td><button class="btn primary-btn" [routerLink]="['./user-profile', userInformation.UserId]">Editar</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

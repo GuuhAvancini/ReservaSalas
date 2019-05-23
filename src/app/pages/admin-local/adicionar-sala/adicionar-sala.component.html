@@ -1,0 +1,121 @@
+<div class="app-content content-class-add">
+
+  <div class="col-md-6">
+    <div class="tile">
+      <div class="row">
+        <div class="col-lg-12">
+          <form #f="ngForm" class="form-class" (ngSubmit)="onSubmit(f.value)">
+            <div class="form-group">
+              <label class="col-md-12 control-label" for="txtgrupo" txtgrupo
+                >Nome da Sala
+              </label>
+              <div class="col-md-12">
+                <input class="col-md-12 form-control" type="text" id="Name" name="Name" ngModel />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-lg-12 control-label" for="lol">Estado </label>
+              <div class="col-md-12">
+                <select
+                  id="StateId"
+                  class="form-control"
+                  (change)="onSelect($event.target.value)"
+                  name="StateId"
+                  ngModel
+                  required
+                >
+                  <option value="0" selected> -- Selecione -- </option>
+                  <option value="{{state.StateId}}" *ngFor="let state of states">{{
+                    state.Name
+                  }}
+                </option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-lg-12 control-label" for="txtgrupo">Filial </label>
+              <div class="col-md-12">
+                <select
+                  id="BranchId"
+                  name="BranchId"
+                  class="form-control"
+                  required
+                  ngModel
+                  [disabled]=""
+                >
+                  <option value="0" selected> -- Selecione -- </option>
+                  <option value="{{ branch.BranchId }}" *ngFor="let branch of branchs">{{
+                    branch.Name
+                  }}</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-lg-12 control-label" for="txtgrupo" txtgrupo
+                >Categoria
+              </label>
+              <div class="col-md-12">
+                <select
+                  id="RoomTypeId"
+                  name="RoomTypeId"
+                  placeholder="-- Selecione --"
+                  class="form-control"
+                  ngModel
+                  required
+                >
+                  <option value="0"> -- Selecione -- </option>
+                  <option
+                    value="{{ roomtype.RoomTypeId }}"
+                    *ngFor="let roomtype of roomType"
+                    >{{ roomtype.Name }}</option
+                  >
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-lg-12 control-label" for="txtgrupo" txtgrupo
+                >Capacidade
+              </label>
+              <div class="col-md-12">
+                <input
+                  type="number"
+                  placeholder="Quantidade de cadeiras na sala"
+                  id="Capacity"
+                  name="Capacity"
+                  ngModel
+                  class="form-control"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-lg-12 control-label" for="txtgrupo"
+                >Equipamentos
+              </label>
+              <div class="col-md-12" *ngFor="let equipaments of equipaments">
+                <input
+                  type="checkbox"
+                  id="{{ equipaments.EquipmentId }}"
+                  value="{{ equipaments.EquipmentId }}"
+                  (click)="selectedStudents($event.target.value)"
+                  name="equipaments"
+                />
+                {{ equipaments.Name }} <br />
+              </div>
+            </div>
+
+            <form #imageForm = ngForm class="upload-style">
+              <img [src]="imageUrl" style="width:50px;height:50px">
+              <input type="file" (change)="handleFileImput($event.target.files)" #image accept="image/*">
+            </form>
+
+            <p class="form-submit">
+              <button type="submit" class="btn btn-primary btn-cadastrar btn-width">Cadastrar</button>
+            </p>
+          </form>
+        </div>
